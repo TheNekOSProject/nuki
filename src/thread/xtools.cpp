@@ -5,7 +5,7 @@
 Display* display = XOpenDisplay(NULL);
 if (display == NULL) {
     fprintf(stderr, "Unable to open display\n");
-    exit(1);
+    exit(39);
 }
 
 
@@ -17,13 +17,3 @@ attributes.override_redirect = True; // Bypass the window manager
 XChangeWindowAttributes(display, window, CWOverrideRedirect, &attributes);
 
 XMapWindow(display, window);
-
-
-XEvent event;
-while (1) {
-    XNextEvent(display, &event);
-    // Handle events as needed
-}
-
-XDestroyWindow(display, window);
-XCloseDisplay(display);
